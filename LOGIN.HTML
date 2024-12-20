@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Vista Tours and Travels</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(to bottom right, #87CEEB, #4682B4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        .login-container h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Times New Roman', serif;
+        }
+        .login-container button {
+            background-color: #4682B4; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+        }
+        .login-container button:hover {
+            background-color: #5a9bd6; 
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            font-family: 'Times New Roman', serif;
+        }
+        .register-link {
+            color: #4682B4;
+            font-size: 1em;
+            margin-top: 15px;
+            display: block;
+            text-decoration: none;
+        }
+        .register-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+            <p class="error" id="errorMessage"></p>
+        </form>
+        <a href="REGISTRATION FORM.HTML" class="register-link">New user? Register here</a>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const validUsername = 'admin';
+            const validPassword = '12345';
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = 'webpage.html';
+            } else {
+                document.getElementById('errorMessage').innerText = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>
